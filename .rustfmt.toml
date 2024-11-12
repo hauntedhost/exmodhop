@@ -1,0 +1,5 @@
+# Keeps imports grouped by crate, module, etc.
+group_imports = "StdExternalCrate"
+
+# Sets import statements to use a more granular structure
+imports_granularity = "Module"
