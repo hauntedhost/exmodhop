@@ -14,12 +14,12 @@ pub fn init(shell: &Shell) {
 fn init_bash() -> String {
     indoc! { r#"
     # Add this to your ~/.bashrc
-    # eval "$(fzf-ex-rs init bash)"
+    # eval "$(exmodhop init bash)"
 
-    run_fzf_ex_rs() {
-        fzf-ex-rs
+    _exmodhop_run() {
+        exmodhop
     }
-    bind -x '"\C-s": run_fzf_ex_rs'
+    bind -x '"\C-s": _exmodhop_run'
     "# }
     .to_string()
 }
@@ -27,15 +27,15 @@ fn init_bash() -> String {
 fn init_zsh() -> String {
     indoc! { r#"
     # Add this to your ~/.zshrc
-    # eval "$(fzf-ex-rs init zsh)"
+    # eval "$(exmodhop init zsh)"
 
-    run_fzf_ex_rs() {
-        fzf-ex-rs
+    _exmodhop_run() {
+        exmodhop
         if [[ $? -ne 0 ]]; then echo "\n"; fi
         zle reset-prompt
     }
-    zle -N run_fzf_ex_rs
-    bindkey '^S' run_fzf_ex_rs
+    zle -N _exmodhop_run
+    bindkey '^S' _exmodhop_run
     "# }
     .to_string()
 }

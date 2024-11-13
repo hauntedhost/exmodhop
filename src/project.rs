@@ -20,7 +20,7 @@ impl Project {
     pub fn new(project_root_path: PathBuf) -> Self {
         let config_root_path = dirs_next::home_dir()
             .expect("Failed to get home path")
-            .join(".config/fzf-ex-rs");
+            .join(".config/exmodhop");
 
         let config_path = project_config_path(&project_root_path, &config_root_path)
             .expect("Failed to get config path");

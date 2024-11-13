@@ -10,13 +10,14 @@ pub fn open_fzf(index_path: &PathBuf, editor: &Editor) -> Result<(), Box<dyn Err
 
     let fzf_output = Command::new("fzf")
         .arg("--ansi")
+        .arg("--color=dark")
         .arg("--delimiter=\\t")
         .arg("--no-scrollbar")
         .arg("--preview")
         .arg(format!(
             r#"{{
-                grey="\033[90m"
-                reset="\033[0m"
+                grey="\e[90m"
+                reset="\e[0m"
                 filename=$(echo {{2}} | tr -d "''" | sed "s|$PWD\/||g")
                 echo -n "${{grey}}${{filename}}${{reset}}\n\n" && \
                 bat \

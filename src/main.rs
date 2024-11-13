@@ -2,11 +2,11 @@ use std::path::PathBuf;
 use std::{env, process};
 
 use clap::Parser;
-use fzf_ex_rs::cli::{Cli, Commands};
-use fzf_ex_rs::fzf::open_fzf;
-use fzf_ex_rs::init::init;
-use fzf_ex_rs::project::Project;
-use fzf_ex_rs::update_index;
+use exmodhop::cli::{Cli, Commands};
+use exmodhop::fzf::open_fzf;
+use exmodhop::init::init;
+use exmodhop::project::Project;
+use exmodhop::update_index;
 use rayon::ThreadPoolBuilder;
 
 fn main() {
